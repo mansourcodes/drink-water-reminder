@@ -1,0 +1,33 @@
+<super-tabs activeTabIndex="1" [config]="{ debug: false, sideMenu: 'left', allowElementScroll: true, nativeSmoothScroll: true }">
+
+  <super-tabs-toolbar slot="top" no-border>
+    <super-tab-button>
+      <ion-icon name="triangle"></ion-icon>
+    </super-tab-button>
+    <super-tab-button>
+      <ion-icon name="ellipse"></ion-icon>
+    </super-tab-button>
+    <super-tab-button>
+      <ion-icon name="square"></ion-icon>
+    </super-tab-button>
+  </super-tabs-toolbar>
+
+  <super-tabs-container >
+    <super-tab class="ion-padding">
+      <ion-content>
+        <ion-nav [root]="tab3Page"></ion-nav>
+      </ion-content>
+    </super-tab>
+    <super-tab>
+      <ion-content>
+        <ion-nav [root]="tab2Page"></ion-nav>
+      </ion-content>
+    </super-tab> 
+    <super-tab>
+      <ion-content>
+        <ion-nav [root]="tab1Page"></ion-nav>
+      </ion-content>
+    </super-tab>
+  </super-tabs-container>
+
+</super-tabs>

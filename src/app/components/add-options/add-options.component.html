@@ -1,0 +1,50 @@
+<div [ngClass]="{
+  'showOptionsON': isShowOptionsON,
+  'optionslistcover' : true
+}">
+  <div class="optionslist">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <div class="record">
+            <ion-img class="img" src="assets/cups/cup-00.svg"></ion-img>
+            <div class="size">Customize</div>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="record" (click)="addRecord(200,3)">
+            <ion-img class="img" src="assets/cups/cup-03.svg"></ion-img>
+            <div class="size">200 ml</div>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="record" (click)="addRecord(300,2)">
+            <ion-img class="img" src="assets/cups/cup-02.svg"></ion-img>
+            <div class="size">300 ml</div>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="record" (click)="addRecord(500,1)">
+            <ion-img class="img" src="assets/cups/cup-01.svg"></ion-img>
+            <div class="size">500 ml</div>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </div>
+  <div class="optionslistbg"></div>
+</div>
+
+<div [ngClass]="{
+  'showOptionsON': isShowOptionsON,
+  'btncover': true
+}">
+
+  <ion-fab class="fabutton" vertical="bottom" horizontal="center" slot="fixed" (click)="show()">
+    <ion-fab-button color="warning">
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</div>

@@ -1,0 +1,48 @@
+.progressbar_holder {
+    padding: 1rem;
+    background-color: var(--ion-color-primary);
+}
+
+.progressbar {
+    border: 1px solid #fff;
+    padding: 0 1rem;
+    width: calc(100% - 2rem);
+    border-radius: 5rem;
+}
+
+
+.bar {
+    border: 1px solid whitesmoke;
+    background-color: whitesmoke;
+    position: relative;
+    padding: 1rem;
+    border-radius: 5rem;
+    overflow: hidden;
+
+    .progress {
+        background-color: #6a9fd5;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 40%;
+        height: 100%;
+
+    }
+
+    .text {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        text-align: center;
+        font-weight: bold;
+        z-index: 100;
+        padding: 0.5rem;
+    }
+
+    .target {
+        position: absolute;
+        left: 20%;
+        bottom: -9px;
+    }
+}

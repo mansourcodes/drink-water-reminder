@@ -1,0 +1,14 @@
+<div class="progressbar_holder">
+
+  <div class="bar">
+    <span class="text"> {{dayProgres.progress}} / {{dayProgres.total}} ml</span>
+
+    <div class="progress" [style.width]="dayProgres.getPer()+'%'">
+    </div>
+    <div class="target" [style.left]="dayProgres.getTarget()+'%'">
+      <ion-icon name="caret-up-outline"></ion-icon>
+    </div>
+  </div>
+
+
+</div>
