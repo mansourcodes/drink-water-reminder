@@ -30,11 +30,18 @@ export class Tab2Page implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.recordsSub = this.recordsService.records.subscribe(records => {
-      this.loadedrecords = records;
+        this.loadedrecords = records;
+        let totalSize = 0;
+        if(!(records == null || records.length == 0)){
+            totalSize = records.reduce((accum,item) => accum + item.size, 0);
+        }
+        this.dayProgressSub = this.dayProgressService.dayProgress.subscribe(dayProgress => {
+                dayProgress.progress = totalSize
+                this.loadedDayProgress = dayProgress;
+        });
+
     });
-    this.dayProgressSub = this.dayProgressService.dayProgress.subscribe(dayProgress => {
-      this.loadedDayProgress = dayProgress;
-    });
+
   }
 
   ionViewWillEnter() {
