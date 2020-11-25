@@ -5,7 +5,10 @@ import { Record } from 'src/app/services/records.model';
 @Component({
   selector: 'app-add-options',
   templateUrl: './add-options.component.html',
-  styleUrls: ['./add-options.component.scss'],
+  styleUrls: [
+      './add-options.component.scss',
+    //   '../../../assets/css/vivify.min.css'
+    ],
 })
 export class AddOptionsComponent implements OnInit {
 

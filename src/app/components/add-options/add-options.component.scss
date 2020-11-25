@@ -1,33 +1,14 @@
+@keyframes pop-in {
+0% { opacity: 0; transform: scale(0); }
+100% { opacity: 1; transform: scale(1); }
+}
+@keyframes pop-out {
+0% { opacity: 0; transform: scale(1); }
+100% { opacity: 1; transform: scale(0); }
+}
+
 .fabutton {
     bottom: 2rem;
-}
-
-.btncover {
-    transform: scale(1);
-    transition: transform 0.05s;
-    transform: scale(1);
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    left: 0;
-    height: 15rem;
-}
-
-.btncover.showOptionsON {
-    transform: scale(0);
-
-}
-
-.optionslistcover {
-    position: fixed;
-    transition: height .35s ease-in-out;
-    bottom: 0;
-    transition: transform .1s;
-    transform: scale(0);
-}
-
-.optionslistcover.showOptionsON {
-    transform: scale(1);
 }
 
 .optionslistbg {
@@ -54,8 +35,6 @@
 
     text-align: center;
 
-    .img {}
-
     .size {
         font-weight: bold;
         color: #555a6f;
@@ -66,4 +45,39 @@
         color: #555a6f;
         font-size: small;
     }
+}
+
+
+.btncover {
+    // transform: scale(1);
+    // transition: transform 0.05s;
+    
+    opacity: 1;
+    animation:pop-in 0.5s; 
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    height: 5rem;
+    background: gainsboro;
+}
+
+.btncover.showOptionsON {
+    animation:pop-out 0.5s; 
+    opacity: 0;
+}
+
+.optionslistcover {
+    position: fixed;
+    bottom: 0;
+    // transition: transform .1s;
+    // transform: scale(0);
+    opacity: 0;
+    // animation:pop-out 0.5s;
+}
+
+.optionslistcover.showOptionsON {
+    // transform: scale(1);
+    opacity: 1;
+    animation:pop-in 0.5s; 
 }

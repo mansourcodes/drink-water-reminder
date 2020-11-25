@@ -3,7 +3,7 @@ import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { Record } from './records.model';
 import { take, map, tap, delay, switchMap } from 'rxjs/operators';
 import { Storage } from '@ionic/storage';
-import moment from 'moment'; 
+import * as moment from 'moment'; 
 import { empty } from 'rxjs';
 
 interface RecordInterface {
@@ -27,10 +27,14 @@ export class RecordsService {
   constructor(private storage: Storage) {
 
     var now = moment().set('month', 3).set('date', 1);
-    this.currentDate = now.format('M_D_YYYY');
+    this.currentDate = now.format('YYYY_MM_DD');
     console.log(this.currentDate);
     
     this.getLocalStorage().then(initRecords => {
+        console.log(initRecords);
+        if(!initRecords){
+            initRecords= [];
+        }
         this._records.next(initRecords);
     });
         
@@ -38,9 +42,12 @@ export class RecordsService {
 
 
   add(newRecord: Record) {
+       console.log('add');
     return this._records.pipe(
       take(1),
       tap(records => {
+          console.log('add pipe');
+          console.log(records);
         if(records == null){
             records = [];
         }
